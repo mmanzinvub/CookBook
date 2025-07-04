@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="691.0" prefWidth="857.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.vub.cookbook.AddRecipeController">
+   <center>
+      <HBox prefHeight="45.0" prefWidth="858.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="501.0" prefWidth="646.0">
+               <children>
+                  <Label depthTest="DISABLE" prefHeight="50.0" prefWidth="444.0" text="Sastojci">
+                     <font>
+                        <Font name="Arial" size="24.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <HBox prefHeight="80.0" prefWidth="430.0">
+                     <children>
+                        <VBox prefHeight="100.0" prefWidth="70.0">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <children>
+                              <Label alignment="CENTER" prefHeight="30.0" prefWidth="70.0" text="Količina">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="quantityField" alignment="CENTER" prefHeight="40.0" prefWidth="60.0" promptText="Količina">
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                              </TextField>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="95.0" prefWidth="99.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="30.0" prefWidth="100.0" text="Masa">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="massField" alignment="CENTER" prefHeight="40.0" prefWidth="60.0" promptText="Masa">
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                              </TextField>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="100.0" prefWidth="70.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="30.0" prefWidth="100.0" text="Jedinica">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="unitField" alignment="CENTER" prefHeight="40.0" prefWidth="60.0" promptText="Jedinica">
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                              </TextField>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="80.0" prefWidth="186.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="30.0" prefWidth="188.0" text="Sastojak">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="ingredientNameField" alignment="CENTER" prefHeight="40.0" prefWidth="183.0" promptText="Sastojak">
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                              </TextField>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="60.0" prefWidth="430.0">
+                     <children>
+                        <VBox prefHeight="100.0" prefWidth="249.0" />
+                        <VBox prefHeight="100.0" prefWidth="181.0">
+                           <children>
+                              <Button fx:id="addIngredientButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleAddIngredient" prefHeight="80.0" prefWidth="120.0" text="Dodaj sastojak">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="75.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <TableView fx:id="ingredientsTable" prefHeight="335.0" prefWidth="415.0">
+                     <columns>
+                        <TableColumn fx:id="idColumn" prefWidth="60.0" text="ID" />
+                        <TableColumn fx:id="quantityColumn" prefWidth="60.0" text="Količina" />
+                        <TableColumn fx:id="massColumn" prefWidth="75.0" text="Masa" />
+                        <TableColumn fx:id="unitColumn" prefWidth="75.0" text="Jedinica" />
+                        <TableColumn fx:id="ingredientColumn" prefWidth="150.0" text="Sastojak" />
+                     </columns>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </TableView>
+                  <HBox prefHeight="60.0" prefWidth="430.0">
+                     <children>
+                        <VBox prefHeight="82.0" prefWidth="265.0">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox prefHeight="82.0" prefWidth="204.0">
+                           <children>
+                              <Button fx:id="removeIngredientButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleRemoveIngredient" prefHeight="50.0" prefWidth="100.0" text="Ukloni sastojak">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="75.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="Arial" size="12.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="501.0" prefWidth="643.0">
+               <children>
+                  <Label prefHeight="50.0" prefWidth="428.0" text="Priprema">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <font>
+                        <Font name="Arial" size="24.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
+                  <HBox prefHeight="100.0" prefWidth="427.0">
+                     <children>
+                        <VBox prefHeight="171.0" prefWidth="427.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="30.0" prefWidth="435.0" text="Opišite pripremu">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets right="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextArea fx:id="instructionsTextArea" prefHeight="153.0" prefWidth="418.0" promptText="Opišite pripremu, korak po korak" wrapText="true">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="Arial" size="12.0" />
+                                 </font>
+                              </TextArea>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="45.0" prefWidth="427.0">
+                     <children>
+                        <VBox prefHeight="70.0" prefWidth="293.0" />
+                        <VBox prefHeight="70.0" prefWidth="136.0">
+                           <children>
+                              <Button fx:id="addStepButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleAddStep" prefHeight="40.0" prefWidth="145.0" text="Dodaj korak">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" right="10.0" top="5.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="Arial" size="12.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <TableView fx:id="stepsTable" prefHeight="323.0" prefWidth="412.0">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                     <columns>
+                        <TableColumn fx:id="stepIdColumn" prefWidth="60.0" text="ID" />
+                        <TableColumn fx:id="stepColumn" prefWidth="355.0" text="Korak" />
+                     </columns>
+                  </TableView>
+                  <HBox prefHeight="73.0" prefWidth="427.0">
+                     <children>
+                        <VBox prefHeight="71.0" prefWidth="287.0" />
+                        <VBox prefHeight="71.0" prefWidth="274.0">
+                           <children>
+                              <Button fx:id="removeStepButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleRemoveStep" prefHeight="50.0" prefWidth="210.0" text="Ukloni korak">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="75.0" right="10.0" top="5.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children></VBox>
+         </children>
+      </HBox>
+   </center>
+   <top>
+      <HBox prefHeight="80.0" prefWidth="858.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="80.0" prefWidth="860.0">
+               <children>
+                  <TextField fx:id="recipeNameField" alignment="CENTER" prefHeight="93.0" prefWidth="858.0" promptText="Unesite ime recepta">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </TextField>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>
