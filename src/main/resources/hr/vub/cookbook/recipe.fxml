@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.vub.cookbook.RecipeController">
+   <top>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" prefHeight="720.0" prefWidth="1280.0" text="CookBook - Pregled recepata">
+               <HBox.margin>
+                  <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Arial" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <TableView fx:id="recipesTable" prefHeight="270.0" prefWidth="1260.0" BorderPane.alignment="CENTER">
+         <columns>
+            <TableColumn fx:id="recipeIdColumn" prefWidth="136.00000989437103" text="ID" />
+            <TableColumn fx:id="recipeNameColumn" prefWidth="1041.599998474121" text="Recept" />
+         </columns>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="50.0" right="50.0" top="10.0" />
+         </BorderPane.margin>
+      </TableView>
+   </center>
+   <bottom>
+      <HBox prefHeight="50.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="100.0" prefWidth="640.0">
+               <children>
+                  <Button fx:id="viewRecipeButton" mnemonicParsing="false" onAction="#handleViewRecipe" prefHeight="30.0" prefWidth="694.0" text="Pregled recepta">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="100.0" right="100.0" top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox prefHeight="100.0" prefWidth="640.0">
+               <children>
+                  <Button fx:id="addNewRecipeButton" mnemonicParsing="false" onAction="#handleAddNewRecipe" prefHeight="30.0" prefWidth="713.0" text="Dodaj recept">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="100.0" right="100.0" top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
