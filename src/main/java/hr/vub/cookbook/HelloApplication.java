@@ -18,14 +18,16 @@ public class HelloApplication extends Application {
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root, 640.0, 640.0);
 
-        stage.setTitle("CookBook - Prijava");
+        stage.setTitle("CookBook");
         stage.setScene(scene);
         stage.show();
 
         SceneManager.setStage(stage);
         SceneManager.registerScene("hello-view", "/hr/vub/cookbook/hello-view.fxml");
         SceneManager.registerScene("login-screen", "/hr/vub/cookbook/login-screen.fxml");
-        SceneManager.registerScene("recipeTable", "/hr/vub/cookbook/recipe-table.fxml");
+        SceneManager.registerScene("recipe", "/hr/vub/cookbook/recipe.fxml");
+        SceneManager.registerScene("add-recipe", "/hr/vub/cookbook/add-recipe.fxml");
+        SceneManager.registerScene("view-recipe", "/hr/vub/cookbook/view-recipe.fxml");
     }
 
     public static void main(String[] args) {

@@ -22,7 +22,7 @@ public class LoginScreenController {
         String password = passwordField.getText().trim();
 
         if (username.equals(VALID_USERNAME) && password.equals(VALID_PASSWORD)) {
-            SceneManager.switchTo("recipeTable");
+            SceneManager.switchTo("recipe");
         } else {
             messageLabel.setText("Neispravno korisničko ime ili lozinka.");
         }
