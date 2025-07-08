@@ -41,7 +41,7 @@ public class Recipe extends Food {
     public boolean requiresCooking() {
         return steps.stream()
                 .anyMatch(step -> step.getStepDescription().toLowerCase().contains("kuha") ||
-                        step.getStepDescription().toLowerCase().contains("peč") ||
+                        step.getStepDescription().toLowerCase().contains("pec") ||
                         step.getStepDescription().toLowerCase().contains("prž"));
     }
 
