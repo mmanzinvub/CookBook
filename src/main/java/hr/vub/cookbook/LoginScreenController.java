@@ -13,8 +13,8 @@ public class LoginScreenController {
     @FXML private PasswordField passwordField;
     @FXML private Label messageLabel;
 
-    private final String VALID_USERNAME = "user";
-    private final String VALID_PASSWORD = "12";
+    private final String VALID_USERNAME = "cook";
+    private final String VALID_PASSWORD = "2222";
 
     @FXML
     private void handleLogin() {
