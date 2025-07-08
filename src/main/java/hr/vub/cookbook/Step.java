@@ -1,25 +1,53 @@
 package hr.vub.cookbook;
 
-public class Step {
-    private int id;
+public class Step extends Food {
     private int recipeId;
-    private String stepDescription;
 
     public Step(int id, String stepDescription) {
+        super("Korak " + id, stepDescription);
         this.id = id;
-        this.stepDescription = stepDescription;
     }
 
     public Step(String stepDescription) {
-        this.stepDescription = stepDescription;
+        super("Korak", stepDescription);
     }
 
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    @Override
+    public String getFoodType() {
+        return "Step";
+    }
 
-    public int getRecipeId() { return recipeId; }
-    public void setRecipeId(int recipeId) { this.recipeId = recipeId; }
+    @Override
+    public int getPreparationTime() {
+        return 5;
+    }
 
-    public String getStepDescription() { return stepDescription; }
-    public void setStepDescription(String stepDescription) { this.stepDescription = stepDescription; }
+    @Override
+    public String getDifficulty() {
+        if (description.toLowerCase().contains("kuha") ||
+                description.toLowerCase().contains("pec")) return "Srednje";
+        if (description.toLowerCase().contains("prž")) return "Teško";
+        return "Lagano";
+    }
+
+    @Override
+    public boolean requiresCooking() {
+        return description.toLowerCase().contains("kuha") ||
+                description.toLowerCase().contains("pec") ||
+                description.toLowerCase().contains("prž");
+    }
+
+    public int getRecipeId() {
+        return recipeId;
+    }
+    public void setRecipeId(int recipeId) {
+        this.recipeId = recipeId;
+    }
+
+    public String getStepDescription() {
+        return description;
+    }
+    public void setStepDescription(String stepDescription) {
+        this.description = stepDescription;
+    }
 }
