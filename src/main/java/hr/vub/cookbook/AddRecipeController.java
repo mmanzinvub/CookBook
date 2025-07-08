@@ -82,7 +82,10 @@ public class AddRecipeController implements Initializable {
 
         stepIdCounter = 1;
         for (Step step : editRecipe.getSteps()) {
-            StepRow stepRow = new StepRow(stepIdCounter++, step.getStepDescription());
+            StepRow stepRow = new StepRow(
+                    stepIdCounter++,
+                    step.getStepDescription()
+            );
             stepsList.add(stepRow);
         }
 
@@ -122,6 +125,7 @@ public class AddRecipeController implements Initializable {
         if (!instruction.isEmpty()) {
             StepRow newStep = new StepRow(stepIdCounter++, instruction);
             stepsList.add(newStep);
+
             instructionsTextArea.clear();
         }
     }
