@@ -18,6 +18,7 @@ public class RecipeController implements Initializable {
     @FXML private TableColumn<Recipe, String> recipeNameColumn;
     @FXML private Button viewRecipeButton;
     @FXML private Button addNewRecipeButton;
+    @FXML private Button exportButton;
 
     private RecipeRepository recipeRepository;
     private ObservableList<Recipe> recipesList;
@@ -97,5 +98,16 @@ public class RecipeController implements Initializable {
         } else {
             System.out.println("Recipe list refresh requested but instance is null");
         }
+    }
+
+    @FXML
+    private void handleExport() {
+        DataManager.exportRecipesToTxt(recipesList)
+                .thenRun(() -> {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Export");
+                    alert.setContentText("Recepti su uspješno eksportirani u recipes.txt!");
+                    alert.showAndWait();
+                });
     }
 }

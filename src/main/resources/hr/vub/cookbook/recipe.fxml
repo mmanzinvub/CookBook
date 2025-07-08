@@ -39,11 +39,11 @@
    <bottom>
       <HBox prefHeight="50.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox prefHeight="100.0" prefWidth="640.0">
+            <VBox prefHeight="100.0" prefWidth="426.0">
                <children>
-                  <Button fx:id="viewRecipeButton" mnemonicParsing="false" onAction="#handleViewRecipe" prefHeight="30.0" prefWidth="694.0" text="Pregled recepta">
+                  <Button fx:id="viewRecipeButton" mnemonicParsing="false" onAction="#handleViewRecipe" prefHeight="30.0" prefWidth="400.0" text="Pregled recepta">
                      <VBox.margin>
-                        <Insets bottom="10.0" left="100.0" right="100.0" top="10.0" />
+                        <Insets bottom="10.0" left="13.0" right="13.0" top="10.0" />
                      </VBox.margin>
                      <font>
                         <Font name="Arial" size="14.0" />
@@ -51,11 +51,23 @@
                   </Button>
                </children>
             </VBox>
-            <VBox prefHeight="100.0" prefWidth="640.0">
+            <VBox prefHeight="100.0" prefWidth="426.0">
                <children>
-                  <Button fx:id="addNewRecipeButton" mnemonicParsing="false" onAction="#handleAddNewRecipe" prefHeight="30.0" prefWidth="713.0" text="Dodaj recept">
+                  <Button fx:id="addNewRecipeButton" mnemonicParsing="false" onAction="#handleAddNewRecipe" prefHeight="30.0" prefWidth="400.0" text="Dodaj recept">
                      <VBox.margin>
-                        <Insets bottom="10.0" left="100.0" right="100.0" top="10.0" />
+                        <Insets bottom="10.0" left="13.0" right="13.0" top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox prefHeight="100.0" prefWidth="426.0">
+               <children>
+                  <Button fx:id="exportButton" mnemonicParsing="false" onAction="#handleExport" prefHeight="30.0" prefWidth="400.0" text="Export TXT">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="13.0" right="13.0" top="10.0" />
                      </VBox.margin>
                      <font>
                         <Font name="Arial" size="14.0" />
