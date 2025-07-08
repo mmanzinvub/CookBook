@@ -7,12 +7,15 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.List;
 
 public class HelloApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
         System.out.println("Starting CookBook application...");
+        
+        List<Recipe> generatedData = GeneratedData.getGeneratedRecipes();
 
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/hr/vub/cookbook/login-screen.fxml"));
         Parent root = fxmlLoader.load();
@@ -23,7 +26,6 @@ public class HelloApplication extends Application {
         stage.show();
 
         SceneManager.setStage(stage);
-        SceneManager.registerScene("hello-view", "/hr/vub/cookbook/hello-view.fxml");
         SceneManager.registerScene("login-screen", "/hr/vub/cookbook/login-screen.fxml");
         SceneManager.registerScene("recipe", "/hr/vub/cookbook/recipe.fxml");
         SceneManager.registerScene("add-recipe", "/hr/vub/cookbook/add-recipe.fxml");

@@ -30,8 +30,6 @@ public class RecipeController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         instance = this;
         loadData();
-
-        List<Recipe> generatedData = GeneratedData.getGeneratedRecipes();
     }
 
     private void loadData() {
