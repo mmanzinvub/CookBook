@@ -3,34 +3,59 @@ package hr.vub.cookbook;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-public class Recipe {
-    private int id;
-    private String name;
+public class Recipe extends Food {
     private ObservableList<Ingredient> ingredients;
     private ObservableList<Step> steps;
 
     public Recipe(int id, String name) {
+        super(name, "Recept za " + name);
         this.id = id;
-        this.name = name;
         this.ingredients = FXCollections.observableArrayList();
         this.steps = FXCollections.observableArrayList();
     }
 
     public Recipe(String name) {
-        this.name = name;
+        super(name, "Recept za " + name);
         this.ingredients = FXCollections.observableArrayList();
         this.steps = FXCollections.observableArrayList();
     }
 
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    @Override
+    public String getFoodType() {
+        return "Recept";
+    }
 
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+    @Override
+    public int getPreparationTime() {
+        return steps.size() * 10;
+    }
 
-    public ObservableList<Ingredient> getIngredients() { return ingredients; }
-    public void setIngredients(ObservableList<Ingredient> ingredients) { this.ingredients = ingredients; }
+    @Override
+    public String getDifficulty() {
+        if (ingredients.size() <= 3) return "Lagano";
+        if (ingredients.size() <= 6) return "Srednje";
+        return "Teško";
+    }
 
-    public ObservableList<Step> getSteps() { return steps; }
-    public void setSteps(ObservableList<Step> steps) { this.steps = steps; }
+    @Override
+    public boolean requiresCooking() {
+        return steps.stream()
+                .anyMatch(step -> step.getStepDescription().toLowerCase().contains("kuha") ||
+                        step.getStepDescription().toLowerCase().contains("peč") ||
+                        step.getStepDescription().toLowerCase().contains("prž"));
+    }
+
+    public ObservableList<Ingredient> getIngredients() {
+        return ingredients;
+    }
+    public void setIngredients(ObservableList<Ingredient> ingredients) {
+        this.ingredients = ingredients;
+    }
+
+    public ObservableList<Step> getSteps() {
+        return steps;
+    }
+    public void setSteps(ObservableList<Step> steps) {
+        this.steps = steps;
+    }
 }
