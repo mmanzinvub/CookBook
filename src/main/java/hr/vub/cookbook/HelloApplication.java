@@ -14,7 +14,7 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         System.out.println("Starting CookBook application...");
-        
+
         List<Recipe> generatedData = GeneratedData.getGeneratedRecipes();
 
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/hr/vub/cookbook/login-screen.fxml"));
