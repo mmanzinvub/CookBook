@@ -73,7 +73,7 @@ public class RecipeController implements Initializable {
             ViewRecipeController.setRecipeData(selected);
             SceneManager.switchTo("view-recipe");
         } else {
-            showAlert("Molimo odaberite recept za pregled!");
+            showAlert("Molimo odaberite recept za pregled");
         }
     }
 

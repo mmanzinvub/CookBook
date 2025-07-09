@@ -9,15 +9,15 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.List;
 
-public class HelloApplication extends Application {
+public class CookBook extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        System.out.println("Starting CookBook application...");
+        System.out.println("Pokretanje aplikacije...");
 
         List<Recipe> generatedData = GeneratedData.getGeneratedRecipes();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/hr/vub/cookbook/login-screen.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(CookBook.class.getResource("/hr/vub/cookbook/login-screen.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root, 640.0, 640.0);
 

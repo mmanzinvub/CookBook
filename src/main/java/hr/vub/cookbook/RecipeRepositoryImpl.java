@@ -71,7 +71,6 @@ public class RecipeRepositoryImpl implements RecipeRepository {
                 recipe.setId(recipeId);
 
                 saveIngredients(recipeId, recipe.getIngredients());
-
                 saveSteps(recipeId, recipe.getSteps());
             }
         } catch (SQLException e) {
@@ -104,7 +103,7 @@ public class RecipeRepositoryImpl implements RecipeRepository {
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();
-            System.out.println("Recipe with ID=" + id + " deleted.");
+            System.out.println("Recept ID=" + id + " izbrisan.");
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -27,7 +27,7 @@ public class SceneManager {
             System.err.println("Scena s imenom '" + name + "' nije registrirana!");
             return;
         } else {
-            System.out.println("scena je registrirana " + fxmlPath);
+            System.out.println("Scena je registrirana " + fxmlPath);
         }
 
         try {
