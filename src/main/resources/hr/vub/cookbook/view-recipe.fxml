@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.vub.cookbook.ViewRecipeController">
+    <children>
+        <VBox alignment="CENTER" spacing="20" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0" AnchorPane.bottomAnchor="30.0">
+            <children>
+                <Label fx:id="recipeNameLabel" alignment="CENTER" text="Naziv recepta">
+                    <font>
+                        <Font name="Arial" size="32.0" />
+                    </font>
+                </Label>
+
+                <HBox alignment="CENTER" spacing="20" VBox.vgrow="ALWAYS">
+                    <children>
+                        <VBox spacing="10" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label text="Sastojci">
+                                    <font>
+                                        <Font name="Arial" size="24.0" />
+                                    </font>
+                                </Label>
+                                <ListView fx:id="ingredientsList" prefHeight="400.0" />
+                            </children>
+                        </VBox>
+
+                        <VBox spacing="10" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label text="Priprema">
+                                    <font>
+                                        <Font name="Arial" size="24.0" />
+                                    </font>
+                                </Label>
+                                <ListView fx:id="stepsList" prefHeight="400.0" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+
+                <HBox alignment="CENTER" spacing="20">
+                    <children>
+                        <Button fx:id="backButton" mnemonicParsing="false" onAction="#handleBack" prefWidth="150.0" text="Nazad">
+                            <font>
+                                <Font name="Arial" size="16.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="editButton" mnemonicParsing="false" onAction="#handleEdit" prefWidth="150.0" text="Uredi recept">
+                            <font>
+                                <Font name="Arial" size="16.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#handleDelete" prefWidth="150.0" text="Obriši recept">
+                            <font>
+                                <Font name="Arial" size="16.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
